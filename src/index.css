@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:700|Poppins:400');
+
+html {
+  min-height: 100vh;
+  background-image: url('https://picjumbo.com/wp-content/uploads/pink-clouds-wallpaper-free-photo.jpg');  
+  background-position: center;
+  background-size: cover;
+  
+} 
+
+body {
+  font-family: 'Poppins';
+  font-weight: 400;
+  max-width: 55rem;
+  margin: auto;
+  
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Poppins';
+  font-weight: 700;
+}
+
+h1 {font-size: 3.053rem; /* 48.8px */}
+
+h2 {font-size: 2.442rem; /* 39.04px */}
+
+h3 {font-size: 1.954rem; /* 31.2px */}
+
+h4 {font-size: 1.563rem; /* 24.96px */}
+
+h5 {font-size: 1.250rem; /* 20px */}
+
+small {font-size: 0.800rem; /* 12.8px */}
+
+
+.skeleton-loader {
+  animation: skeleton-loading 2s ease-in-out infinite alternate;
+  /* background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); */
+  background-size: 200% 100%;
+  margin: 1rem;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 80%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
