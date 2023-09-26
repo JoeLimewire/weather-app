@@ -24,8 +24,6 @@ function WeatherApp() {
 
   const API_KEY = process.env.REACT_APP_API_KEY;
 
-  console.info(API_KEY);
-
   const fetchWeatherData = async () => {
     try {
       setLoading(true);
