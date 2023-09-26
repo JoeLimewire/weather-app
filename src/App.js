@@ -26,6 +26,7 @@ function WeatherApp() {
 
   const fetchWeatherData = async () => {
     try {
+      setForecast(null);
       setLoading(true);
       setErrorMessage('');
 
@@ -42,7 +43,7 @@ function WeatherApp() {
       setForecast(response.data);
 
     } catch (error) {
-      setErrorMessage(`${error.response.statusText}: ${error.message}`);
+      setErrorMessage(`${error.message}: ${error.response?.statusText}`);
       if (!city) setErrorMessage("Please enter a valid city.")
       console.error('Error fetching weather data:', error);
     } finally {
@@ -102,7 +103,7 @@ function WeatherApp() {
 
       {/* Inputs */}
       <div className='md:flex flex-row justify-between mb-3 sm:flex-column'>
-        <div>
+        <div className='glass rounded-lg p-2'>
           <label className="label">
             <span className="label-text">City</span>
           </label>
@@ -114,7 +115,7 @@ function WeatherApp() {
             onChange={(e) => setCity(e.target.value)}
           />
         </div>
-        <div>
+        <div className='glass rounded-lg p-2'>
           <label className="label">
             <span className="label-text">Temperature unit</span>
           </label>
@@ -130,7 +131,7 @@ function WeatherApp() {
           </select>
         </div>
 
-        <div className="form-control w-full max-w-xs">
+        <div className="form-control w-full max-w-xs glass rounded-lg p-2">
           <label className="label">
             <span className="label-text">Number of days</span>
             <span className="label-text-alt"> Max: 5 days</span>
